@@ -12,13 +12,10 @@ TIMEOUT=25
     TIMEOUT=$[$TIMEOUT-1]
   done
 }
-# shrink="../../../"
 shrink="$DIR/../../../../app"
-say $shrink
-# shrink=""
-$shrink./1_download_aerial.sh $screen$saver
+
+$shrink/install/./1_check_resource.sh $screen$saver
 adaptive_wait
 osascript -e 'quit app "System Preferences"'
-$shrink./2_local_install_workaround.sh $screen".saver"
-$shrink./3_install_launch_agent.sh dyna
-open $shrink$screen"2.app"
+$shrink/install/./notify_and_defaults/2_local_install_workaround.sh $screen".saver"
+$shrink/install/./launch_agent/3_install_launch_agent.sh dyna
