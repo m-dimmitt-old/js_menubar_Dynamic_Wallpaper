@@ -1,4 +1,5 @@
 const {ipcRenderer} = require('electron')
+const path = require('path');
 
 var opener = require("opener");
 
@@ -39,5 +40,5 @@ const binning = path.join(hiding, 'bin');
       }
 
       function Uninstall() {
-        opener (path.join(binning,'Uninstall.app'));
+        opener (path.join(binning,'Stop.app'));
       }
