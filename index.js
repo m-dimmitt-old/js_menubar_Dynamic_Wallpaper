@@ -12,7 +12,7 @@ const binning = path.join(hiding, 'bin');
       }
 
       function MarineAquarium() {
-        opener([path.join(binning, "Installer.app"), "--args", "MarineAquarium3.2"]);
+        opener([path.join(binning, "Installer.app"), "--args", "MarineAquarium"]);
       }
 
       function StarWarsScroll() {
