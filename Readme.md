@@ -23,7 +23,8 @@ npm install
     </pre>
     <br>
     <b>In one command, rebuild:</b>
-    <pre>electron-packager . --overwrite; open tutorial-menubar-app-darwin-x64/tutorial-menubar-app.app/</pre>
+    <pre>electron-packager . --overwrite; open dyna-dynamic-walpaper-darwin-x64/dyna-dynamic-walpaper.app/ 
+    </pre>
 
     Copyright (c) 2017, Michael Dimmitt
     <br>Access granted upon approved request. 

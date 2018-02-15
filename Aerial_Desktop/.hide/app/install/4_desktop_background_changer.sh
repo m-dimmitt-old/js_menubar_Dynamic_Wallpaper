@@ -24,7 +24,6 @@ test_date() {
         date +%s >> $DIR/.timestamp.txt
         if curl --silent --head https://github.com/michaeldimmitt/aerial_desktop;
           then 
-            sleep 3;
             `/System/Library/Frameworks/ScreenSaver.framework/Resources/./ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background`;# echo Internet status: OK; 
           else 
             check_launch_agent
@@ -41,7 +40,6 @@ test_date() {
         date +%s >> $DIR/.timestamp.txt;
         if curl --silent --head https://github.com/michaeldimmitt/aerial_desktop;
           then 
-            sleep 3;
             `/System/Library/Frameworks/ScreenSaver.framework/Resources/./ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background`;
             # echo Internet status: OK; 
           else 
