@@ -1,15 +1,127 @@
 {
   "name": "dyna-dynamic-walpaper",
   "version": "1.0.0",
+  "description": "break time reminder app",
+  "main": "app/main.js",
+  "engines": {
+    "node": "8.9.3"
+  },
+  "scripts": {
+    "start": "electron ./app",
+    "dev": "NODE_ENV='development' electron ./app --enable-logging --remote-debugging-port=9222",
+    "postinstall": "electron-builder install-app-deps",
+    "pack-all": "build --dir -mwl --x64 --ia32",
+    "dist-all": "build -mwl --x64 --ia32",
+    "pack": "build --dir",
+    "dist": "build --x64 --ia32",
+    "test": "mocha test",
+    "tdd": "mocha --watch test",
+    "lint": "./node_modules/.bin/standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hovancik/stretchly.git"
+  },
+  "keywords": [
+    "stretchly",
+    "break",
+    "time",
+    "reminder"
+  ],
+  "author": "Jan Hovancik <conta.srdr@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/hovancik/stretchly/issues"
+  },
+  "homepage": "https://hovancik.net/stretchly",
   "devDependencies": {
-    "electron": "^1.6.11",
-    "electron-packager": "^8.0.0"
+    "babel-eslint": "^8.2.3",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "electron": "^2.0.0",
+    "electron-builder": "^20.11.1",
+    "mocha": "^5.2.0",
+    "opener": "^1.4.3",
+    "sinon": "^5.0.3",
+    "spectron": "^3.8.0",
+    "standard": "^11.0.1"
+  },
+  "build": {
+    "appId": "net.hovancik.stretchly",
+    "productName": "stretchly",
+    "dmg": {
+      "icon": "build/icon.icns",
+      "iconSize": 128,
+      "contents": [
+        {
+          "x": 355,
+          "y": 125,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 155,
+          "y": 125,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.healthcare-fitness",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "extendInfo": {
+        "LSBackgroundOnly": 1,
+        "LSUIElement": 1
+      }
+    },
+    "linux": {
+      "category": "Utility",
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "freebsd",
+        "pacman",
+        "tar.xz"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "nsis-web",
+        "7z",
+        "zip",
+        "appx"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "nsisWeb": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "it",
+      "describe",
+      "beforeEach",
+      "afterEach",
+      "Audio",
+      "fetch",
+      "Notification",
+      "alert"
+    ]
   },
   "dependencies": {
-    "opener": "^1.4.3"
-  },
-  "main": "main.js",
-  "scripts": {
-    "dyna": "electron-packager . --overwrite"
+    "@paulcbetts/system-idle-time": "^1.0.4",
+    "i18next": "^11.2.3",
+    "i18next-node-fs-backend": "^1.0.0"
   }
 }
