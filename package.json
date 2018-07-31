@@ -1,12 +1,11 @@
 {
   "name": "dyna-dynamic-walpaper",
-  "version": "0.1.1",
-  "devDependencies": {
+  "version": "0.1.2",
+  "devDependencies": {},
+  "dependencies": {
+    "opener": "^1.4.3",
     "electron": "^1.6.11",
     "electron-packager": "^8.0.0"
-  },
-  "dependencies": {
-    "opener": "^1.4.3"
   },
   "main": "main.js",
   "scripts": {
