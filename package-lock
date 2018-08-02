@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "opener": {
+      "resolved": "https://registry.npmjs.org/opener/-/opener-1.4.3.tgz",
+      "integrity": "sha1-XG2ixdflgx6P+jlklQ+NZnSskLg="
+    }
+  }
+}
