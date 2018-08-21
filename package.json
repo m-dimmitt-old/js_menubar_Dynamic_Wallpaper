@@ -7,5 +7,7 @@
   },
   "dependencies": {},
   "main": "main.js",
-  "scripts": {}
+  "scripts": {
+    "deploy":"electron-packager . --overwrite; open minimal-js-menubar-darwin-x64/minimal-js-menubar.app/"
+  }
 }
