@@ -10,6 +10,6 @@
   },
   "main": "main.js",
   "scripts": {
-    "dyna": "electron-packager . --overwrite"
+    "dyna": "mkdir ../placeholder mv .git ../placeholder; electron-packager . --overwrite; mv ../placeholder .git" 
   }
 }
