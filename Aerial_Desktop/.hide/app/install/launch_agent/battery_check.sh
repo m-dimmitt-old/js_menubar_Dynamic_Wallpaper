@@ -52,6 +52,7 @@ if [ "$result" == "Yes" ] ; then
   # echo Charging;
   if curl --silent --head https://github.com/michaeldimmitt/aerial_desktop;  
     then 
+      sleep 3;
       $DIR/./3_install_launch_agent.sh dyna;
     else 
       check_wifi
@@ -68,6 +69,7 @@ elif [ "$result" == "No" ] ; then
     # osascript -e 'display notification "Computer not charging and but at an acceptable battery level, program ok." with title "Aerial Desktop"'
     if curl --silent --head https://github.com/michaeldimmitt/aerial_desktop;  
       then 
+        sleep 3;
         $DIR/./3_install_launch_agent.sh dyna;
       else 
         check_wifi
